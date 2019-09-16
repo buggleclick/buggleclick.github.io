@@ -1,7 +1,7 @@
 {
   "name": "buggle.click",
   "version": "0.0.0-alpha",
-  "description": "Buggle Clicker Game - Because Why The Fuck Not.",
+  "description": "Buggle Clicker Game - Because Why The Fuck Not",
   "main": "index.js",
   "scripts": {
     "setup": "npm install -d"
@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/buggleclick/buggleclick.github.io/issues"
   },
-  "homepage": "https://github.com/buggleclick/buggleclick.github.io#readme",
+  "homepage": "https://buggleclick.github.io",
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-sizereport": "^1.2.1",
