@@ -1,0 +1,14 @@
+{
+    "cdn": {
+        "jQuery": "https://code.jquery.com/jquery-3.4.1.min.js",
+        "fontAwesome": "https://kit.fontawesome.com/c91aa9f77d.js",
+        "bootstrapCss": "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
+        "bootstrapJs": "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    },
+    "icons": {
+        "bugglePaw": "fas fa-paw-claws",
+        "changelog": "fad fa-list-ul",
+        "about": "fad fa-info-circle",
+        "donate": "fad fa-donate"
+    }
+}
