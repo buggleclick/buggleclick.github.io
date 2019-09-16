@@ -4,7 +4,8 @@
   "description": "Buggle Clicker Game - Because Why The Fuck Not",
   "main": "index.js",
   "scripts": {
-    "setup": "npm install -d"
+    "setup": "npm install -d",
+    "build:ts": "tsc --rootDir build/scripts --outDir assets/scripts"
   },
   "repository": {
     "type": "git",
