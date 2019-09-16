@@ -2,6 +2,8 @@
     "title": "buggle.click",
     "description": "Click and gather the Tang!",
     "socialCard": "assets/images/social.png",
+    "themeColor": "",
+    "favicon": "",
     "cdn": {
         "jQuery": "https://code.jquery.com/jquery-3.4.1.min.js",
         "fontAwesome": "https://kit.fontawesome.com/c91aa9f77d.js",
