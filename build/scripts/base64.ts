@@ -95,7 +95,7 @@ const base64: Base64 = {
 		let enc1, enc2, enc3, enc4;
 		let i: number = 0;
  
-		input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+		input = input.replace(/[^A-Za-z0-9\+\/\=]/g, '');
  
 		while (i < input.length) {
  
