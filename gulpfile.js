@@ -41,5 +41,22 @@ const makeChangelog = (callback) => {
     const object = JSON.stringify(content, null, 4);
     const code = String(`export const CHANGELOG: ${type} = ${object};\n`);
 
-    fs.writeFile('./source/scripts/changelog.ts', code, 'utf8', callback);
+    fs.writeFile('./build/scripts/changelog.ts', code, 'utf8', callback);
+}
+
+// Create Size Report of Finished Files
+const sizeReport = () => gulp.src([
+    'assets/scripts/*.js',
+    'assets/css/*.css',
+    '*.html'
+]).pipe(sizeRepo({ gzip: true, total: true }));
+
+// Compile Typescript
+const buildTypescript = npmScript('ts');
+
+const build = gulp.series(clean, makeChangelog, buildTypescript);
+
+module.exports = {
+    build,
+    default: build,
 }
