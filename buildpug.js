@@ -2,6 +2,8 @@ const fs            = require('fs');
 const path          = require('path');
 const pug           = require('pug');
 
+const config        = require('./config.json');
+
 const pugFilesPath  = path.join(__dirname, 'build', 'views');
 
 fs.readdir(pugFilesPath, function(error, files) {
@@ -12,7 +14,17 @@ fs.readdir(pugFilesPath, function(error, files) {
 
             let compile = pug.compileFile(thisFilePath);
 
-            let htmlSource = compile();
+            let htmlSource = compile({
+                cdnJQuery: config.cdn.jQuery,
+                cdnBoostrapCss: config.cdn.bootstrapCss,
+                cdnBoostrapJs: config.cdn.bootstrapJs,
+                cdnFontAwesome: config.cdn.fontAwesome,
+
+                iconPaw: config.icons.bugglePaw,
+                iconChangelog: config.icons.changelog,
+                iconAbout: config.icons.about,
+                iconDonate: config.icons.donate
+            });
 
             fs.writeFileSync(`./${newFileName}`, htmlSource);
         }
