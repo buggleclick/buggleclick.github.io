@@ -18,8 +18,10 @@
   },
   "homepage": "https://buggleclick.github.io",
   "dependencies": {
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-sizereport": "^1.2.1",
+    "markdown-tree": "0.0.0",
     "pug": "^2.0.4",
     "typescript": "^3.5.3",
     "yargs": "^14.0.0"
