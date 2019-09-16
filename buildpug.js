@@ -18,7 +18,9 @@ fs.readdir(pugFilesPath, function(error, files) {
                 title: config.title,
                 description: config.description,
                 card: config.socialCard,
-                
+                favicon: config.favicon,
+                themeColor: config.themeColor,
+
                 cdnJQuery: config.cdn.jQuery,
                 cdnBoostrapCss: config.cdn.bootstrapCss,
                 cdnBoostrapJs: config.cdn.bootstrapJs,
