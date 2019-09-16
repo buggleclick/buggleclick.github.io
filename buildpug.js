@@ -22,8 +22,8 @@ fs.readdir(pugFilesPath, function(error, files) {
                 themeColor: config.themeColor,
 
                 cdnJQuery: config.cdn.jQuery,
-                cdnBoostrapCss: config.cdn.bootstrapCss,
-                cdnBoostrapJs: config.cdn.bootstrapJs,
+                cdnBootstrapCss: config.cdn.bootstrapCss,
+                cdnBootstrapJs: config.cdn.bootstrapJs,
                 cdnFontAwesome: config.cdn.fontAwesome,
 
                 iconPaw: config.icons.bugglePaw,
