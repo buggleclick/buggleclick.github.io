@@ -15,6 +15,10 @@ fs.readdir(pugFilesPath, function(error, files) {
             let compile = pug.compileFile(thisFilePath);
 
             let htmlSource = compile({
+                title: config.title,
+                description: config.description,
+                card: config.socialCard,
+                
                 cdnJQuery: config.cdn.jQuery,
                 cdnBoostrapCss: config.cdn.bootstrapCss,
                 cdnBoostrapJs: config.cdn.bootstrapJs,
