@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "setup": "npm install -d",
-    "build:ts": "tsc --rootDir build/scripts --outDir assets/scripts"
+    "ts": "tsc --rootDir build/scripts --outDir assets/scripts"
   },
   "repository": {
     "type": "git",
