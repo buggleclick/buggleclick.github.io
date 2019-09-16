@@ -3,6 +3,7 @@ const path              = require('path');
 const spawn             = require('child_process').spawn;
 const gulp              = require('gulp');
 const sizeRepo          = require('gulp-sizereport');
+const imageMin          = require('gulp-imagemin');
 const del               = require('del');
 const mdTree            = require('markdown-tree');
 
@@ -44,6 +45,9 @@ const makeChangelog = (callback) => {
     fs.writeFile('./build/scripts/changelog.ts', code, 'utf8', callback);
 }
 
+// Copy Assets
+const assetsCopy = () => gulp.src('./build/assets/**/*').pipe(imageMin()).pipe(gulp.dest('assets'))
+
 // Create Size Report of Finished Files
 const sizeReport = () => gulp.src([
     'assets/scripts/*.js',
@@ -51,10 +55,12 @@ const sizeReport = () => gulp.src([
     '*.html'
 ]).pipe(sizeRepo({ gzip: true, total: true }));
 
-// Compile Typescript
+// Compile Files
 const buildTypescript = npmScript('ts');
+const buildPug = npmScript('pug');
 
-const build = gulp.series(clean, makeChangelog, buildTypescript);
+// Build Scripts
+const build = gulp.series(clean, makeChangelog, assetsCopy, buildTypescript, buildPug);
 
 module.exports = {
     build,
