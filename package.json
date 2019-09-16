@@ -1,0 +1,26 @@
+{
+  "name": "buggle.click",
+  "version": "0.0.0-alpha",
+  "description": "Buggle Clicker Game - Because Why The Fuck Not.",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buggleclick/buggleclick.github.io.git"
+  },
+  "author": "HazardWorks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/buggleclick/buggleclick.github.io/issues"
+  },
+  "homepage": "https://github.com/buggleclick/buggleclick.github.io#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sizereport": "^1.2.1",
+    "pug": "^2.0.4",
+    "typescript": "^3.5.3",
+    "yargs": "^14.0.0"
+  }
+}
