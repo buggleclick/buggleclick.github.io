@@ -39,7 +39,7 @@ class Game {
     /**
      * Load save file from LOCALSTORAGE
      */
-    loadLocalSave(): void {
+    loadLocal(): void {
         if(!window.localStorage && !localStorage) {
             new GameError('Could not load game! No LOCALSTORAGE access!');
         } else {
@@ -64,7 +64,7 @@ class Game {
     /**
      * Save file to LOCALSTORAGE
      */
-    saveLocalSave(): void {
+    saveLocal(): void {
         if(!window.localStorage && !localStorage) {
             new GameError('Could not save! No LOCALSTORAGE access!');
         } else {
@@ -78,6 +78,52 @@ class Game {
             }
             let saveString: string = JSON.stringify(thisSaveFile);
             localStorage.setItem('tang:save', saveString);
+        }
+    }
+    /**
+     * Save to Encoded String
+     */
+    exportSave(): string {
+        let thisSaveFile: SaveFormat = {
+            tangCurrent: this.tangCurrent,
+            tangTotal: this.tangTotal,
+            tangPerSecond: this.tangPerSecond,
+            tangPerClick: this.tangPerClick,
+            buggleName: this.buggleName,
+            started: this.started
+        }
+        let saveData: string = JSON.stringify(thisSaveFile);
+
+        if(!window.btoa) {
+            let saveBase64: string = base64.encode(saveData);
+            return saveBase64;
+        } else {
+            let saveBase64: string = window.btoa(saveData);
+            return saveBase64;
+        }
+    }
+    /**
+     * Load from Encoded String
+     * @param saveData <string> Encoded Save String
+     */
+    importSave(saveData: string): void {
+        let that = this;
+        let parseSave = function(save: SaveFormat): void {
+            that.tangCurrent = save.tangCurrent;
+            that.tangTotal = save.tangTotal;
+            that.tangPerSecond = save.tangPerSecond;
+            that.tangPerClick = save.tangPerClick;
+            that.buggleName = save.buggleName;
+            that.started = save.started;
+        }
+        if(!window.atob) {
+            let saveFile: string = base64.decode(saveData);
+            let saveObject: SaveFormat = JSON.parse(saveFile);
+            parseSave(saveObject);
+        } else {
+            let saveFile: string = window.atob(saveData);
+            let saveObject: SaveFormat = JSON.parse(saveFile);
+            parseSave(saveObject);
         }
     }
     /**
