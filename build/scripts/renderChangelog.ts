@@ -11,3 +11,6 @@ function renderChangelog(): void {
         })
     })
 }
+
+// Actually render the changelog!
+renderChangelog();
