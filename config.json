@@ -12,8 +12,8 @@
     },
     "icons": {
         "bugglePaw": "fas fa-paw-claws",
-        "changelog": "fad fa-list-ul",
-        "about": "fad fa-info-circle",
-        "donate": "fad fa-donate"
+        "changelog": "fad fa-list-ul fa-lg",
+        "about": "fad fa-info-circle fa-lg",
+        "donate": "fad fa-donate fa-lg"
     }
 }
