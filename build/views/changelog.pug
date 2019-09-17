@@ -5,4 +5,14 @@ html
 
     body
         include _navbar.pug
+
+        div.container.text-left
+            h1.text-primary Changelog
+            div#changelog.container
+
+        script(src=cdnJQuery)
+        script(src=cdnBootstrapJs)
+        script(src=cdnFontAwesome)
+        script(src="./assets/scripts/changelog.js")
+        script(src="./assets/scripts/renderChangelog.js")
     
