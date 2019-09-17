@@ -40,7 +40,7 @@ const makeChangelog = (callback) => {
 
     const type = String(`{ version: string; changes: string[]; }[]`);
     const object = JSON.stringify(content, null, 4);
-    const code = String(`export const CHANGELOG: ${type} = ${object};\n`);
+    const code = String(`const CHANGELOG: ${type} = ${object};\n`);
 
     fs.writeFile('./build/scripts/changelog.ts', code, 'utf8', callback);
 }
